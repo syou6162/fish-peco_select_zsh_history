@@ -5,7 +5,7 @@ function peco_select_zsh_history
     set peco_flags --query "$query"
   end
 
-  cat .zsh_history | peco $peco_flags | read line
+  tail -r ~/.zsh_history | peco $peco_flags | read line
 
   if [ $line ]
     commandline $line
